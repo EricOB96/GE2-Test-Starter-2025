@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cradhms2k8hwa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_etgmo"]
+size = Vector3(1, 0.3, 1.5)
+
+[node name="Drone" type="Node3D"]
+
+[node name="body" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_etgmo")

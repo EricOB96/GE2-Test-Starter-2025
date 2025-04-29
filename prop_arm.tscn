@@ -1,14 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3pkbttsvq1xk"]
+[gd_scene load_steps=5 format=3 uid="uid://b3pkbttsvq1xk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2lkh8"]
 size = Vector3(0.5, 0.5, 1.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lkh8"]
+albedo_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdsh1"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pgqp7"]
+size = Vector3(1, 0.5, 5)
+
 [node name="propArm" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_2lkh8")
+[node name="prop" type="Node3D" parent="."]
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="p1" type="MeshInstance3D" parent="prop"]
+mesh = SubResource("BoxMesh_2lkh8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2lkh8")
+
+[node name="p2" type="MeshInstance3D" parent="prop"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0358346, 0, 0.0197505)
 mesh = SubResource("BoxMesh_2lkh8")
-skeleton = NodePath("../MeshInstance3D")
+skeleton = NodePath("../p1")
+surface_material_override/0 = SubResource("StandardMaterial3D_cdsh1")
+
+[node name="Arm" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.515397, 2.09013)
+mesh = SubResource("BoxMesh_pgqp7")
