@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1mt883kcp3i"]
+[gd_scene load_steps=9 format=3 uid="uid://b1mt883kcp3i"]
 
 [ext_resource type="PackedScene" uid="uid://cradhms2k8hwa" path="res://drone.tscn" id="1_jgr37"]
+[ext_resource type="Script" uid="uid://d228ta80b2dek" path="res://scripts/CameraFollow.gd" id="1_qrxkg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jgr37"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -41,8 +42,11 @@ mesh = SubResource("PlaneMesh_qhlfa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_jgr37")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.10388, 4.15923)
+script = ExtResource("1_qrxkg")
+target = NodePath("../Drone")
+player = NodePath("../Drone")
 
 [node name="Drone" parent="." instance=ExtResource("1_jgr37")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11131, 0)
