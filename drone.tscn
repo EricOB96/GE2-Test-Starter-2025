@@ -11,6 +11,7 @@ size = Vector3(1, 0.3, 1.5)
 [node name="Drone" type="Node3D"]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 9.8
 script = ExtResource("1_d5du7")
 
 [node name="body" type="MeshInstance3D" parent="RigidBody3D"]

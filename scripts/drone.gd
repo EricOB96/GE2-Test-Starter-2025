@@ -3,6 +3,9 @@ extends RigidBody3D
 @export var max_speed = 10.0
 @export var speed = 10.0
 @export var rotSpeed = 5.0
+@export var propSpeed = 10.0
+
+@export var props:Array[Node] = []
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,4 +24,6 @@ func _process(delta):
 	var up = Input.get_axis("down", "up")
 	if up:
 		translate(Vector3.UP * max_speed * up * delta)
+		
+		rotation.z -= propSpeed * delta * up
 		
