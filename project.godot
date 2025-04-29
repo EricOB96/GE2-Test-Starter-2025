@@ -15,6 +15,10 @@ run/main_scene="uid://b1mt883kcp3i"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="GE2-Test-2025"
+
 [input]
 
 up={
