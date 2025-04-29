@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crvye3e8si3rl"]
+
+[ext_resource type="Script" uid="uid://cuyjs53rnm524" path="res://scripts/SteeringBehavior.gd" id="1_bbpm3"]
+
+[node name="SteeringBehavior" type="Node"]
+script = ExtResource("1_bbpm3")
